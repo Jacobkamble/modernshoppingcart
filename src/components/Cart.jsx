@@ -9,10 +9,11 @@ import {
   TextField,
   Avatar,
   Grid,
+  Button,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const Cart = ({cartItems,handleRemoveItem,handleQuantityChange}) => {
+const Cart = ({cartItems,handleRemoveItem,handleQuantityChange,handleClearCart}) => {
  
   return (
     <>
@@ -24,6 +25,7 @@ const Cart = ({cartItems,handleRemoveItem,handleQuantityChange}) => {
           borderRadius: 1,
         }}
       >
+        {cartItems.length===0&&<Typography variant="h5">Cart is empty,please add products...!!!</Typography>}
         <List>
           {cartItems &&
             cartItems.map(
@@ -75,7 +77,10 @@ const Cart = ({cartItems,handleRemoveItem,handleQuantityChange}) => {
               )
             )}
         </List>
-        {cartItems&&cartItems.reduce((acc,curr)=>acc+(curr.price*curr.quantity),0)}
+        {cartItems.length>0&&(<><Button variant="contained" size="small" onClick={handleClearCart}>Clear Cart</Button>        <Typography sx={{}} variant="h5">Total : {cartItems&&cartItems.reduce((acc,curr)=>acc+(curr.price*curr.quantity),0)}</Typography></>) }
+       
+
+       
       </Box>
     </>
   );

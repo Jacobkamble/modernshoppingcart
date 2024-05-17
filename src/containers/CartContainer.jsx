@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { removeFromCart, changeCartQty } from "../redux/features/cartSlice";
+import { removeFromCart, changeCartQty, clearCart } from "../redux/features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Cart from "../components/Cart";
 
@@ -15,12 +15,17 @@ const CartContainer = () => {
     dispatch(changeCartQty({ id, quantity }));
   };
 
+  const handleClearCart=()=>{
+    dispatch(clearCart())
+  }
+
   return (
     <>
       <Cart
         cartItems={cartItems}
         handleRemoveItem={handleRemoveItem}
         handleQuantityChange={handleQuantityChange}
+        handleClearCart={handleClearCart}
       />
     </>
   );

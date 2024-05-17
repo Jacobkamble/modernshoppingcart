@@ -34,9 +34,6 @@ export const useFilterData = (data) => {
       products = products.filter((prod) => prod.stock >= 0);
     }
 
-
-    // console.log("product",products)
-
     return products;
   };
 

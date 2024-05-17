@@ -14,8 +14,6 @@ import {
   sort,
   rating,
   outOfStock,
-  search,
-  clearFilter,
 } from "../redux/features/filterSlice";
 import { useDispatch } from "react-redux";
 const Filter = () => {
@@ -42,23 +40,6 @@ const Filter = () => {
   return (
     <>
       <Box sx={{ p: 2, bgcolor: "background.paper", boxShadow: 1 }}>
-        {/* <FormControl fullWidth sx={{ mb: 2 }}> */}
-        {/* <InputLabel id="category-label">Category</InputLabel> */}
-        {/* <Select
-          labelId="category-label"
-          id="category-select"
-          value={selectedCategory}
-          label="Category"
-          onChange={handleCategoryChange}
-        > */}
-        {/* <MenuItem value="">All</MenuItem> */}
-        {/* {categories.map((category) => (
-            <MenuItem key={category.id} value={category.id}>
-              {category.name}
-            </MenuItem>
-          ))} */}
-        {/* </Select> */}
-        {/* </FormControl> */}
 
         <FormGroup sx={{ mb: 2 }}>
           <FormControlLabel

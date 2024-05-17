@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useFilterData } from "./useFilterData";
 
 export const useFetchData=(url)=>{
     const [data,setData]=useState([]);
@@ -12,7 +11,6 @@ export const useFetchData=(url)=>{
             const res=await fetch(url);
             const json=await res.json();
             setData(json.products)
-// useFilterData()
 
             setLoading(false)
         } catch (error) {

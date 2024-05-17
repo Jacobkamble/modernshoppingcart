@@ -3,7 +3,7 @@ import { useFetchData } from "../hooks/useFetchData";
 import Loading from "../components/Loading";
 import ProductList from "../components/ProductList";
 import Error from "../components/Error";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import Filter from "../components/Filter";
 import { useFilterData } from "../hooks/useFilterData";
 
@@ -20,13 +20,14 @@ const ProductListContainer = () => {
       {error && <Error />}
 
       {!loading && !error && (
-        <Grid container>
+        <Grid marginTop={1} container>
           <Grid item sm={3}>
             <Filter />
           </Grid>
           <Grid item sm={9}>
             {" "}
             <ProductList data={filterProducts} />
+            {filterProducts.length===0&&(<Typography sx={{position:"absolute",left:"50%",top:"50%"}} variant="h4">No products found...</Typography>)}
           </Grid>
         </Grid>
       )}

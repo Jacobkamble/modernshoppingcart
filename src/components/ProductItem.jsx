@@ -3,6 +3,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import Rating from '@mui/material/Rating';
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
@@ -27,10 +28,10 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <Box>
-      <Card sx={{}}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      <Card sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
         <CardMedia sx={{ height: 140 }} image={thumbnail} title={title} />
-        <CardContent>
+        <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
@@ -41,7 +42,7 @@ const ProductItem = ({ product }) => {
             <strong> Price: {price}</strong>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <strong> Rating: {rating}</strong>
+            <Rating precision={0.5} value={rating} readOnly/>
           </Typography>
         </CardContent>
         <CardActions>

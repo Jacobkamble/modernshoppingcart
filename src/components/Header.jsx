@@ -87,12 +87,12 @@ const Header=()=> {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Link to={"/"}>
+          <Link to={"/"} style={{color:"inherit",textDecoration:"none"}}>
             <Typography
               variant="h6"
               noWrap
               component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
+              sx={{ display: { xs: "none", sm: "block" }}}
             >
               Shopping Cart
             </Typography>
@@ -111,7 +111,7 @@ const Header=()=> {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Link to={"/cart"}>
+            <Link to={"/cart"} style={{color:"inherit",textDecoration:"none"}}>
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
